@@ -1,0 +1,8 @@
+.gear_detail
+  = attachment_image_tag @gear, :gear_image, size: "100x100", fallback: "no_image_gear.png"
+  p ギア名
+  = @gear.name
+  p memo
+  = @gear.introduction
+  p 数量
+  = @gear.amount

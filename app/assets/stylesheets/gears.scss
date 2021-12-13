@@ -1,3 +1,35 @@
 // Place all the styles related to the gears controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.gear_list {
+  &__item {
+    margin: 10px 0;
+    img {
+      margin-right: 10px;
+    }
+  }
+}
+
+// new・edit
+.gear_form {
+  width: fit-content;
+  margin: 0 auto;
+  select {
+    height: 30px;
+  }
+  &__btn {
+    margin: 30px auto 0 auto;
+    text-align: center;
+    .btn {
+      padding: 10px 40px;
+    }
+  }
+  &__item {
+  }
+}
+
+// show
+.gear_detail {
+  text-align: center;
+}

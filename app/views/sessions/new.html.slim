@@ -1,8 +1,12 @@
-h1 ログイン
-
-= form_with scope: :session, local: true do |f|
-  = f.label :email, "メールアドレス"
-  = f.email_field :email
-  = f.label :password, "パスワード"
-  = f.password_field :password
-  = f.submit "ログイン"
+.session_form_area
+  .session_form_area__content
+    h2　ログイン
+    = form_with scope: :session, local: true do |f|
+      .field
+        = f.label :email, "メールアドレス"
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+      .field
+        = f.label :password, "パスワード"
+        = f.password_field :password, autocomplete: "current-password", class: "form-control"
+      .actions
+        = f.submit "ログイン", class: "btn btn-success"

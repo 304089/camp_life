@@ -1,0 +1,5 @@
+- gears.each do |gear|
+  .gear_list__item
+    = link_to gear_path(gear)
+      = attachment_image_tag gear, :gear_image, size: "50x50", fallback: "no_image_gear.png", class: "border"
+      = gear.name

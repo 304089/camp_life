@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :login_user, only:[:new, :create]
   before_action :set_user, except:[:new, :create]
 
   def new
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to user_path(@user)
     else
       render "new"
     end

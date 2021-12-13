@@ -1,3 +1,22 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.content {
+  height: 80vh;
+  position: relative;
+  top: 100px;
+}
+
+.title_area {
+  text-align: center;
+}
+
+.session_area {
+  text-align: center;
+  position: relative;
+  top: 80px;
+}
+
+.session_btn {
+  margin-top: 40px;
+}

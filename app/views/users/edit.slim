@@ -1,0 +1,11 @@
+.user_edit_area
+  .user_edit_area__form
+    = form_with model:@user, local:true do |f|
+      .user_edit_area__form__item
+        .attachment.user_attachment
+          = attachment_image_tag @user, :profile_image, size: "200x200", fallback: "no_image.jpg", class: "change_file rounded-circle"
+          = f.attachment_field :profile_image, class: "myfile"
+      .user_edit_area__form__item.user_edit_area__form__item__name
+        = f.text_field :name, placeholder: "ユーザーネーム"
+      .user_edit_area__form__item.user_edit_area__form__btn
+        = f.submit "更新する", class:"btn btn-success"

@@ -1,0 +1,33 @@
+- if controller.controller_name == "gears"
+  - if controller.action_name == "new"
+    h1 ギア登録
+  - elsif controller.action_name == "show"
+    h1 ギア詳細
+    = link_to edit_gear_path do
+      i.fas.fa-cog
+  - elsif controller.action_name == "edit"
+    h1 ギア編集
+  - else
+    h1 ギア一覧
+    = link_to new_gear_path do
+      i.fas.fa-plus-square
+- elsif controller.controller_name == "plans"
+  - if controller.action_name == "new"
+    h1 計画作成
+  - elsif controller.action_name == "show"
+    h1 計画詳細
+    = link_to edit_plan_path do
+      i.fas.fa-cog
+  - elsif controller.action_name == "edit"
+    h1 計画編集
+  - else
+    h1 キャンプ計画一覧
+    = link_to new_plan_path do
+      i.fas.fa-plus-square
+- elsif controller.controller_name == "users"
+  - if controller.action_name == "edit"
+    h1 ユーザー情報編集
+  - else
+    h1 ユーザー
+    i.fas.fa-bars.menu_btn.open_btn
+    i.fas.fa-times.menu_btn.close_btn.menu_btn_hide

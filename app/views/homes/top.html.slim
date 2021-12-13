@@ -1,5 +1,8 @@
-- if current_user
-  = link_to "ログアウト", logout_path, method: :delete
-- else
-  = link_to "新規登録", new_user_path
-  = link_to "ログイン", login_path
+.content
+  .title_area
+    h1 CAMP NOTE
+  .session_area
+    .sign_in.session_btn
+      = link_to "新規登録", new_user_path, class: "btn btn-success btn-lg"
+    .sign_up.session_btn
+      = link_to "ログイン", login_path, class: "btn btn-success btn-lg"
