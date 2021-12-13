@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_13_071235) do
+ActiveRecord::Schema.define(version: 2021_12_13_130703) do
+
+  create_table "gears", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "name", null: false
+    t.string "introduction"
+    t.integer "amount", null: false
+    t.string "gear_image_id"
+    t.integer "genre", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
