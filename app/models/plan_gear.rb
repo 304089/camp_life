@@ -1,0 +1,2 @@
+class PlanGear < ApplicationRecord
+end
