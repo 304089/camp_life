@@ -1,0 +1,26 @@
+.plan_form
+  = form_with model: @plan, url: gear_choice_plans_path, method: :post, local: true do |f|
+    .plan_form__item
+      p キャンプタイトル
+      = f.text_field :title
+    .plan_form__item
+      p 日にち
+      = f.date_field :departure_date
+      = f.date_field :return_date
+    .plan_form__item
+      p チェックイン
+      = f.time_select :check_in_time, start_hour: 9, end_hour: 20, minute_step: 30
+    .plan_form__item
+      p チェックアウト
+      = f.time_select :check_out_time, start_hour: 9, end_hour: 20, minute_step: 30
+    .plan_form__item
+      p キャンプ場
+      = f.text_field :place
+    .plan_form__item
+      p 参加人数
+      = f.select :member, options_for_select((1..20).to_a, @plan.member)
+    .plan_form__item
+      p メモ
+      = f.text_area :memo
+    .plan_form__item.plan_form__btn
+      = f.submit "ギア選択へ"

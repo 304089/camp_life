@@ -1,0 +1,6 @@
+.gear_list
+  - Gear.genres.count.times do |i|
+    - if gears.exists?(genre: i)
+      .gear_list__name
+        p #{Gear.genres.key(i)}
+        = render "gears/list", gears: gears.where(genre: i)
