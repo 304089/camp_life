@@ -10,10 +10,10 @@ html
     - unless controller.controller_name == "homes"
       header
         = render "layouts/header"
-    .container
-      = render "layouts/menu"
-      = yield
-    - unless controller.controller_name == "homes"
-      footer
-        = render "layouts/footer"
+        = render "layouts/menu"
+        .container
+          = yield
+      - unless controller.controller_name == "homes"
+        footer
+          = render "layouts/footer"
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

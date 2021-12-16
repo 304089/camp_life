@@ -1,0 +1,7 @@
+.menu_list
+  .menu_list__item
+    = link_to edit_user_path(current_user) do
+      p ユーザー編集
+  .menu_list__item
+    = link_to logout_path do
+      p ログアウト
