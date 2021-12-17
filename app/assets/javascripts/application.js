@@ -54,7 +54,6 @@ $(function() {
         $(".main").css("background-color", "rgba(0,0,0,0.4)");
         $(".close_btn").removeClass("menu_btn_hide");
         $(".open_btn").addClass("menu_btn_hide");
-
       }else{
         $(menu).addClass("menu_active");
         $(menu).animate({'right':'-100%'},300);

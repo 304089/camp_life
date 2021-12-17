@@ -91,6 +91,10 @@ footer {
   top: 70px;
   right: -100%;
   background: pink;
+  &__item:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
 }
 
 .menu_active {
