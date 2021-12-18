@@ -17,10 +17,12 @@
   - elsif controller.action_name == "show"
     h1 
       = plan.title
-    = link_to edit_plan_path do
+    = link_to schedule_edit_plan_path(plan) do
       i.fas.fa-cog
-  - elsif controller.action_name == "edit"
+  - elsif controller.action_name == "schedule_edit"
     h1 計画編集
+  - elsif controller.action_name == "gear_edit"
+    h1 ギア選択
   - else
     h1 キャンプ計画一覧
     = link_to new_plan_path do

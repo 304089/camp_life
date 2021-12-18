@@ -1,0 +1,3 @@
+.plan_form
+  = form_with model: @plan, url: gear_edit_plan_path(@plan), method: :post, local: true do |f|
+    = render "form", plan: @plan, f: f

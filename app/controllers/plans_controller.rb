@@ -25,13 +25,18 @@ class PlansController < ApplicationController
     @plans = Plan.mine(current_user)
   end
 
-  def edit
+  def schedule_edit
+  end
+
+  def gear_edit
   end
 
   def update
-  end
-
-  def destroy
+    if @plan.update(plan_params)
+      redirect_to plans_path
+    else
+      render "gear_edit"
+    end
   end
 
   private

@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :users, except:[:index, :destroy]
   resources :gears, except:[:destroy]
   resources :plans do
+    member do
+      get :schedule_edit
+      post :gear_edit
+    end
     collection do
       post :gear_choice
     end
