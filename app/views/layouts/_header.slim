@@ -15,7 +15,8 @@
   - if controller.action_name == "new"
     h1 計画作成
   - elsif controller.action_name == "show"
-    h1 計画詳細
+    h1 
+      = plan.title
     = link_to edit_plan_path do
       i.fas.fa-cog
   - elsif controller.action_name == "edit"

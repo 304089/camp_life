@@ -1,11 +1,9 @@
-p #{plan.set_date(plan.departure_date)}〜#{plan.set_date(plan.return_date)}
-= plan.title
-p in#{plan.place}
-p チェックイン
-= plan.set_time(plan.check_in_time)
-p チェックアウト
-= plan.set_time(plan.check_out_time)
-p 参加人数
-p #{plan.member}人
-p メモ
-= plan.memo
+.schedule_area
+  p 日時：#{plan.set_date(plan.departure_date)}〜#{plan.set_date(plan.return_date)}
+  p チェックイン：#{plan.set_time(plan.check_in_time)}
+  p チェックアウト：#{plan.set_time(plan.check_out_time)}
+  p 場所：#{plan.place}
+  p 人数：#{plan.member}人
+  - unless plan.memo == ""
+    p メモ
+    = plan.memo

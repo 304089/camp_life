@@ -84,6 +84,12 @@ footer {
   }
 }
 
+body {
+  position: relative;
+  width: 100%;
+  overflow-y: hidden;
+}
+
 .menu_list {
   width: 30%;
   min-height: 100vh;

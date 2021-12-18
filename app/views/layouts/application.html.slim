@@ -7,13 +7,14 @@ html
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
   body
-    - unless controller.controller_name == "homes"
+    - unless controller.controller_name == "sessions" || controller.controller_name == "users" && controller.action_name == "new"
       header
-        = render "layouts/header"
+        = render "layouts/header", plan: @plan
         = render "layouts/menu"
-        .container
-          = yield
-      - unless controller.controller_name == "homes"
-        footer
-          = render "layouts/footer"
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    .container
+      = yield
+    - unless controller.controller_name == "sessions" || controller.controller_name == "users" && controller.action_name == "new"
+      footer
+        = render "layouts/footer"
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
