@@ -1,32 +1,13 @@
 .gear_choice_form
   = form_with model:@plan, local: true do |f|
-    - if Gear.exists?(genre: 0)
-      p テント・タープ
-      = f.collection_check_boxes :gear_ids, Gear.where(genre: 0), :id, :name, include_hidden: false
-    - if Gear.exists?(genre: 1)
-      p テーブル・チェア
-      = f.collection_check_boxes :gear_ids, Gear.where(genre: 1), :id, :name, include_hidden: false
-    - if Gear.exists?(genre: 2)
-      p 調理道具
-      = f.collection_check_boxes :gear_ids, Gear.where(genre: 2), :id, :name, include_hidden: false
-    - if Gear.exists?(genre: 3)
-      p 照明器具
-      = f.collection_check_boxes :gear_ids, Gear.where(genre: 3), :id, :name, include_hidden: false
-    - if Gear.exists?(genre: 4)
-      p 焚き火道具
-      = f.collection_check_boxes :gear_ids, Gear.where(genre: 4), :id, :name, include_hidden: false
-    - if Gear.exists?(genre: 5)
-      p 寝具
-      = f.collection_check_boxes :gear_ids, Gear.where(genre: 5), :id, :name, include_hidden: false
-    - if Gear.exists?(genre: 6)
-      p 収納
-      = f.collection_check_boxes :gear_ids, Gear.where(genre: 6), :id, :name, include_hidden: false
-    - if Gear.exists?(genre: 7)
-      p 燃料
-      = f.collection_check_boxes :gear_ids, Gear.where(genre: 7), :id, :name, include_hidden: false
-    - if Gear.exists?(genre: 8)
-      p その他
-      = f.collection_check_boxes :gear_ids, Gear.where(genre: 8), :id, :name, include_hidden: false
+    .gear_list
+      - Gear.genres.count.times do |i|
+        - if Gear.mine(current_user).exists?(genre: i)
+          .gear_list__name
+            p #{Gear.genres.key(i)}
+            = f.collection_check_boxes :gear_ids, Gear.where(genre: i), :id, :name, include_hidden: false do |b|
+              .gear_list__name__label
+                = b.check_box + b.label { b.text }
     = f.hidden_field :title, :value => @plan.title
     = f.hidden_field :departure_date, :value => @plan.departure_date
     = f.hidden_field :return_date, :value => @plan.return_date
@@ -35,4 +16,5 @@
     = f.hidden_field :check_out_time, :value => @plan.check_out_time
     = f.hidden_field :member, :value => @plan.member
     = f.hidden_field :memo, :value => @plan.memo
-    = f.submit "作成"
+    .gear_choice_btn
+      = f.submit "登録完了", class: "btn btn-success"
