@@ -1,4 +1,10 @@
 class Gear < ApplicationRecord
+  with_options presence: true do
+    validates :genre
+    validates :name
+    validates :amount
+  end
+
   belongs_to :user
   has_many :plan_gears
   has_many :plans, through: :plan_gears

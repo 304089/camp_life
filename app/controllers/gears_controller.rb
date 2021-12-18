@@ -8,8 +8,11 @@ class GearsController < ApplicationController
   def create
     @gear = Gear.new(gear_params)
     @gear.user_id = current_user.id
-    @gear.save
-    redirect_to gears_path
+    if @gear.save
+      redirect_to gears_path
+    else
+      render "new"
+    end
   end
 
   def show
