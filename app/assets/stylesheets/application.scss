@@ -51,6 +51,9 @@ header {
     text-align: center;
     line-height: 70px;
     font-size: 30px;
+    padding: 0 80px;
+    overflow-y: scroll;
+    white-space: nowrap;
   }
   i {
     font-size: 50px;
@@ -87,7 +90,11 @@ footer {
 body {
   position: relative;
   width: 100%;
-  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.container {
+  padding-bottom: 100px;
 }
 
 .menu_list {
@@ -164,23 +171,4 @@ body {
   top: 0;
   width: 100%;
   cursor: pointer;
-}
-
-@media screen and (max-width: 425px) {
-  .session_form_area {
-    width: 100%;
-    &__content {
-      top: 100px;
-      width: 90%;
-      input#user_name,
-      input#user_email,
-      input#user_password,
-      input#user_password_confirmation {
-        width: 80%;
-      }
-    }
-  }
-  .menu_list {
-    width: 60%;
-  }
 }

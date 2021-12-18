@@ -3,8 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // show
 .plan_form {
-  width: 40%;
+  padding: 20px;
+  border: 1px solid;
+  width: 60%;
   margin: 0 auto;
+  position: relative;
+  top: 40px;
 }
 
 .long_input input {
@@ -76,4 +80,9 @@
 }
 .gear_list a:hover {
   opacity: 0.5;
+}
+
+// index
+.gear_index {
+  padding-top: 20px;
 }

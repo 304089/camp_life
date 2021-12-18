@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .profile_area {
-  background: cornflowerblue;
   width: fit-content;
   text-align: center;
   margin: 0 auto;
+  padding: 20px;
   &__name {
     font-size: 30px;
   }

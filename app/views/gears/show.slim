@@ -1,8 +1,6 @@
 .gear_detail
-  = attachment_image_tag @gear, :gear_image, size: "100x100", fallback: "no_image_gear.png"
-  p ギア名
-  = @gear.name
-  p memo
-  = @gear.introduction
-  p 数量
-  = @gear.amount
+  = attachment_image_tag @gear, :gear_image, size: "250x250", fallback: "no_image_gear.png"
+  p.text-left ギア名：#{@gear.name}
+  p.text-left 数量：#{@gear.amount}
+  - unless @gear.introduction == ""
+    p.text-left メモ：#{@gear.introduction}

@@ -13,8 +13,19 @@
 
 // new・edit
 .gear_form {
-  width: fit-content;
+  width: 50%;
+  padding: 20px;
+  border: 1px solid;
   margin: 0 auto;
+  position: relative;
+  top: 20px;
+  input,
+  textarea {
+    width: 100%;
+  }
+  textarea {
+    height: 100px;
+  }
   select {
     height: 30px;
   }
@@ -32,4 +43,11 @@
 // show
 .gear_detail {
   text-align: center;
+  padding: 20px;
+  position: relative;
+  top: 20px;
+  border: 1px solid;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 25px;
 }
