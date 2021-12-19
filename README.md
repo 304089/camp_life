@@ -1,24 +1,19 @@
-# README
+# CAMP LIFE
+キャンプ計画作成アプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 主な機能
+- キャンプギア登録機能
+- キャンプ計画作成機能（登録したギアを計画に反映）
 
-Things you may want to cover:
+## 開発背景
+- キャンプに行く際の忘れ物防止になるアプリを作りたかった。
+- キャンプの計画を立てるのが好き。
+- キャンプでの持ち物を記録することで後の参考になる。
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：macOS Big Sur
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- エディタ:Visual Studio Code
