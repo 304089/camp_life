@@ -8,6 +8,9 @@ class PlansController < ApplicationController
   def gear_choice
     @plan = Plan.new(plan_params)
     @plan.plan_gears.build
+    if @plan.title == nil || @plan.departure_date == nil || @plan.return_date == nil || @plan.place == nil
+      render "new"
+    end
   end
 
   def create
@@ -29,14 +32,14 @@ class PlansController < ApplicationController
   end
 
   def gear_edit
+    if @plan.title == "" || @plan.departure_date == "" || @plan.return_date == "" || @plan.place == ""
+      render "schedule_edit"
+    end
   end
 
   def update
-    if @plan.update(plan_params)
-      redirect_to plans_path
-    else
-      render "gear_edit"
-    end
+    @plan.update(plan_params)
+    redirect_to plans_path
   end
 
   private
